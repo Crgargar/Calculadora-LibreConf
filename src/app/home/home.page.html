@@ -1,20 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculadora
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-input type="number" min="1" max="100" [(ngModel)]="num1" placeholder="Introduce un numero del 1 al 100">
+      </ion-input>
+      <ion-input type="number" min="1" max="100" [(ngModel)]="num2" placeholder="Introduce un numero del 1 al 100">
+      </ion-input>
+      <ion-card>
+        <ion-card-content *ngIf="numS > 0">
+          La Suma es {{ numS }}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content *ngIf="numR > 0">
+          La Resta es {{ numR }}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content *ngIf="numM > 0">
+          La Multiplicacion es {{ numM }}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content *ngIf="numD > 0">
+          La Division es {{ numD }}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button class="boton" (click)="suma()">Sumar</ion-button>
+      <ion-button class="boton" (click)="resta()">Restar</ion-button>
+      <ion-button class="boton" (click)="multiplicacion()">Multiplicar</ion-button>
+      <ion-button class="boton" (click)="division()">Division</ion-button>  
+      <ion-button *ngIf="numR > 0" expand="block" (click)="reinicia()">Volver a jugar</ion-button>
+
   </div>
 </ion-content>
