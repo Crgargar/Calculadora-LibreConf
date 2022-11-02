@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+ion-content {
+  --background: rgb(235, 250, 104);
+}
+
+@media screen and (min-width: 992px) {
+  ion-content {
+    --background: rgb(0, 200, 255);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ion-content {
+    --background: rgb(17, 239, 176);
+  }
+
+  .boton5{
+    display: none;
+  }
+}
